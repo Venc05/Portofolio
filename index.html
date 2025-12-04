@@ -1,0 +1,124 @@
+<!-- NAVIGATION FLUIDE ET DISCRÈTE -->
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <span class="text-xl font-bold text-cyan-400">AG.AGENT</span>
+        <div class="space-x-4 hidden sm:block">
+            <a href="#accueil" class="text-gray-300 hover:text-cyan-400 transition duration-300">Accueil</a>
+            <a href="#role" class="text-gray-300 hover:text-cyan-400 transition duration-300">Mon Rôle</a>
+            <a href="#projets" class="text-gray-300 hover:text-cyan-400 transition duration-300">Artefacts</a>
+            <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 1. ACCUEIL (HERO SECTION) -->
+<section id="accueil" class="section-padding flex items-center justify-center relative">
+    <div class="text-center z-10 p-6 rounded-xl bg-black/50 backdrop-blur-sm max-w-4xl">
+        <p class="text-lg text-cyan-400 mb-4 tracking-widest uppercase">/ Bienvenue dans l'ère agentique</p>
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight">
+            ORCHESTRATEUR <br> D'AGENTS IA
+        </h1>
+        <p class="text-2xl text-gray-400 mb-8">
+            Maîtrise de Google Antigravity : de la Vision à l'Artefact.
+        </p>
+        <a href="#projets" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full inline-flex items-center space-x-2">
+            <span>Voir les Preuves de Travail</span>
+            <!-- Icône de flèche ou de code -->
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+    </div>
+</section>
+
+<!-- 2. MON RÔLE (À PROPOS) -->
+<section id="role" class="section-padding max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Architecture & Supervision</span>
+            <h2 class="text-5xl font-bold mt-2 mb-6">Passer du Codeur à l'Architecte de Logiciel.</h2>
+            <p class="text-gray-400 text-lg mb-6">
+                L'agent Antigravity transforme l'IDE en une console de pilotage. Mon expertise réside dans la définition précise des **prompts** (objectifs clairs pour l'IA), la révision critique du **Plan d'Implémentation** généré, et la validation des **Artifacts** (preuves tangibles, captures d'écran, logs de tests) pour garantir la confiance et la conformité.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-3 py-1 bg-gray-800 text-sm text-yellow-400 rounded-full border border-yellow-500/30">Prompt Engineering</span>
+                <span class="px-3 py-1 bg-gray-800 text-sm text-fuchsia-400 rounded-full border border-fuchsia-500/30">Vérification d'Artifacts</span>
+                <span class="px-3 py-1 bg-gray-800 text-sm text-lime-400 rounded-full border border-lime-500/30">Orchestration de Tâches</span>
+            </div>
+        </div>
+        <!-- Simulation d'un bloc de code/terminal -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-2xl border border-cyan-400/30 font-mono text-sm overflow-hidden">
+            <div class="flex space-x-2 mb-4">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+            </div>
+            <pre class="whitespace-pre-wrap text-gray-300">
+<span class="text-cyan-400">$ agent.assign("BuildFlightTrackerApp", "React")</span>
+<span class="text-green-400">[AG-PLAN]:</span> Génération de la Task List (14 étapes)... OK.
+<span class="text-yellow-400">[AG-USER]:</span> Ajour d'un feedback: "Utiliser shadcn/ui pour les composants."
+<span class="text-green-400">[AG-EXEC]:</span> Agent a mis à jour le plan et exécute la phase de codage.
+<span class="text-fuchsia-400">[AG-VERIFY]:</span> Test unitaire réussi pour la connexion API. Artifact #4 généré.
+            </pre>
+        </div>
+    </div>
+</section>
+
+<!-- 3. PROJETS (ARTEFACTS) -->
+<section id="projets" class="section-padding max-w-7xl mx-auto">
+    <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Preuves de Compétence</span>
+    <h2 class="text-5xl font-bold mt-2 mb-16">Artefacts Clés</h2>
+
+    <div class="space-y-16">
+        <!-- ARTEFACT 1 -->
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">1. Architecture d'une Application SaaS Multi-Agent</h3>
+            <p class="text-gray-400 mb-6">
+                Orchestration de trois agents (Frontend, Backend, DevOps) travaillant en parallèle sur un même projet. J'ai géré les conflits de dépendances et validé les merges.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Manager View Screenshot</span>
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Modèle: Gemini 3 Pro</span>
+                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Détail du Workflow</a>
+            </div>
+        </div>
+
+        <!-- ARTEFACT 2 -->
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">2. Débogage et Refactorisation via Browser-in-the-Loop</h3>
+            <p class="text-gray-400 mb-6">
+                Utilisation de la fonctionnalité de contrôle du navigateur d'Antigravity pour identifier un bug visuel. L'agent a généré un enregistrement vidéo (Artifact) du bug, puis a corrigé le code JS/CSS de manière autonome.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Browser Recording (MP4)</span>
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Compétence: Feedback Asynchrone</span>
+                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Analyse du Bug</a>
+            </div>
+        </div>
+
+        <!-- ARTEFACT 3 -->
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">3. Génération d'un Composant D3.js de Visualisation de Données</h3>
+            <p class="text-gray-400 mb-6">
+                Instruction donnée à l'agent pour créer un graphique de données complexe (arborescence) à partir d'un ensemble de données JSON, sans intervention manuelle sur la librairie D3.js.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Live Demo/Screenshot</span>
+                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Outil: JavaScript/D3.js</span>
+                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Voir la Visualisation</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. CONTACT -->
+<section id="contact" class="section-padding text-center max-w-7xl mx-auto">
+    <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Lancement de Mission</span>
+    <h2 class="text-5xl font-bold mt-2 mb-8">Discutons de l'Ère des Agents.</h2>
+    <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">
+        Vous cherchez à transformer votre workflow de développement ? Contactez l'architecte qui maîtrise l'orchestration de l'IA.
+    </p>
+    
+    <div class="flex justify-center space-x-6">
+        <a href="mailto:votre.email@example.com" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full">Email Direct</a>
+        <a href="#" target="_blank" class="tech-button bg-gray-700 text-white font-semibold py-3 px-8 rounded-full">LinkedIn</a>
+    </div>
+</section>
