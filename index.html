@@ -1,124 +1,320 @@
-<!-- NAVIGATION FLUIDE ET DISCRÈTE -->
-<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-        <span class="text-xl font-bold text-cyan-400">AG.AGENT</span>
-        <div class="space-x-4 hidden sm:block">
-            <a href="#accueil" class="text-gray-300 hover:text-cyan-400 transition duration-300">Accueil</a>
-            <a href="#role" class="text-gray-300 hover:text-cyan-400 transition duration-300">Mon Rôle</a>
-            <a href="#projets" class="text-gray-300 hover:text-cyan-400 transition duration-300">Artefacts</a>
-            <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Administrateur Réseau | [Votre Nom]</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la police Inter (standard professionnel) et du thème sombre -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0e12; /* Arrière-plan très sombre, presque noir */
+            color: #e5e7eb; /* Texte clair */
+            overflow-x: hidden;
+        }
+        .section-padding {
+            padding: 8rem 2rem;
+            min-height: 100vh;
+        }
+        /* Style des boutons pour l'effet futuriste */
+        .tech-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); /* Ombre bleu électrique */
+        }
+        .tech-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.8), 0 0 5px rgba(0, 191, 255, 0.2);
+            background-color: rgba(0, 191, 255, 0.1);
+        }
+        /* Animation subtile des lignes de fond */
+        .animated-bg {
+            background-image: linear-gradient(rgba(0, 191, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 191, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 60s linear infinite;
+        }
+        @keyframes moveGrid {
+            from { background-position: 0 0; }
+            to { background-position: 5000px 5000px; }
+        }
+
+        /* Styles Spécifiques au Dropdown */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+        .dropdown-menu.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="animated-bg">
+
+    <!-- NAVIGATION AVEC DROP DOWNS (ARBORESCENCE RÉSEAU) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <span class="text-xl font-bold text-cyan-400">RÉSEAU.ADMIN</span>
+            <div class="space-x-4 hidden sm:flex items-center">
+                <!-- Liens Statiques -->
+                <a href="#competences" class="text-gray-300 hover:text-cyan-400 transition duration-300">Portefeuille de Compétences</a>
+                <a href="#certifications" class="text-gray-300 hover:text-cyan-400 transition duration-300">Certifications</a>
+                
+                <!-- DROPDOWN 1 : RÉALISATION SCOLAIRE -->
+                <div class="relative group" id="dropdown-scolaire">
+                    <button class="flex items-center text-gray-300 hover:text-cyan-400 transition duration-300 py-1">
+                        Réalisation en milieu scolaire
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu absolute right-0 mt-2 w-64 bg-gray-900 rounded-md shadow-lg py-1 border border-cyan-400/20 z-20">
+                        <a href="#projet1" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Projet Terminal Serveur</a>
+                        <a href="#projet2" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Sécurisation (Firewall)</a>
+                    </div>
+                </div>
+
+                <!-- DROPDOWN 2 : STAGES -->
+                <div class="relative group" id="dropdown-stages">
+                    <button class="flex items-center text-gray-300 hover:text-cyan-400 transition duration-300 py-1">
+                        Stages <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu absolute right-0 mt-2 w-48 bg-gray-900 rounded-md shadow-lg py-1 border border-cyan-400/20 z-20">
+                        <a href="#stage1" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Stage 1</a>
+                        <a href="#stage2" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Stage 2</a>
+                        <a href="#stage3" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Stage 3</a>
+                    </div>
+                </div>
+
+                <!-- Liens Statiques -->
+                <a href="#veille" class="text-gray-300 hover:text-cyan-400 transition duration-300">Veille Technologique</a>
+                <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contacts</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- 1. ACCUEIL (HERO SECTION) -->
-<section id="accueil" class="section-padding flex items-center justify-center relative">
-    <div class="text-center z-10 p-6 rounded-xl bg-black/50 backdrop-blur-sm max-w-4xl">
-        <p class="text-lg text-cyan-400 mb-4 tracking-widest uppercase">/ Bienvenue dans l'ère agentique</p>
-        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight">
-            ORCHESTRATEUR <br> D'AGENTS IA
-        </h1>
-        <p class="text-2xl text-gray-400 mb-8">
-            Maîtrise de Google Antigravity : de la Vision à l'Artefact.
-        </p>
-        <a href="#projets" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full inline-flex items-center space-x-2">
-            <span>Voir les Preuves de Travail</span>
-            <!-- Icône de flèche ou de code -->
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-    </div>
-</section>
-
-<!-- 2. MON RÔLE (À PROPOS) -->
-<section id="role" class="section-padding max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Architecture & Supervision</span>
-            <h2 class="text-5xl font-bold mt-2 mb-6">Passer du Codeur à l'Architecte de Logiciel.</h2>
-            <p class="text-gray-400 text-lg mb-6">
-                L'agent Antigravity transforme l'IDE en une console de pilotage. Mon expertise réside dans la définition précise des **prompts** (objectifs clairs pour l'IA), la révision critique du **Plan d'Implémentation** généré, et la validation des **Artifacts** (preuves tangibles, captures d'écran, logs de tests) pour garantir la confiance et la conformité.
+    <!-- 1. ACCUEIL (HERO SECTION) -->
+    <section id="accueil" class="section-padding flex items-center justify-center relative">
+        <div class="text-center z-10 p-6 rounded-xl bg-black/50 backdrop-blur-sm max-w-4xl">
+            <p class="text-lg text-cyan-400 mb-4 tracking-widest uppercase">/ Bienvenue dans mon environnement</p>
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight">
+                ADMINISTRATEUR <br> RÉSEAU
+            </h1>
+            <p class="text-2xl text-gray-400 mb-8">
+                Expertise en infrastructure, virtualisation et cybersécurité.
             </p>
-            <div class="flex flex-wrap gap-4">
-                <span class="px-3 py-1 bg-gray-800 text-sm text-yellow-400 rounded-full border border-yellow-500/30">Prompt Engineering</span>
-                <span class="px-3 py-1 bg-gray-800 text-sm text-fuchsia-400 rounded-full border border-fuchsia-500/30">Vérification d'Artifacts</span>
-                <span class="px-3 py-1 bg-gray-800 text-sm text-lime-400 rounded-full border border-lime-500/30">Orchestration de Tâches</span>
+            <a href="#stage1" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full inline-flex items-center space-x-2">
+                <span>Explorer les Stages</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. PORTEFEUILLE DE COMPÉTENCES -->
+    <section id="competences" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Maîtrise Technique</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Portefeuille de Compétences</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-900 p-6 rounded-lg border border-cyan-400/30">
+                <h3 class="text-2xl text-white mb-3">Infrastructure & Virtualisation</h3>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Gestion de serveurs Windows Server (AD, GPO, DNS)</li>
+                    <li>Virtualisation avec VMware ESXi et Hyper-V</li>
+                    <li>Mise en place de solutions de stockage (NAS/SAN)</li>
+                </ul>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg border border-cyan-400/30">
+                <h3 class="text-2xl text-white mb-3">Réseaux & Sécurité</h3>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Configuration de switchs et routeurs (Cisco)</li>
+                    <li>Administration de Firewalls (iptables, Fortinet)</li>
+                    <li>Protocoles TCP/IP, VLAN, VPN</li>
+                </ul>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg border border-cyan-400/30">
+                <h3 class="text-2xl text-white mb-3">Systèmes & Scripting</h3>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Environnements Linux (Debian, Ubuntu)</li>
+                    <li>Scripting (PowerShell, Bash) pour l'automatisation</li>
+                    <li>Gestion des systèmes de sauvegarde (Veeam)</li>
+                </ul>
             </div>
         </div>
-        <!-- Simulation d'un bloc de code/terminal -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-2xl border border-cyan-400/30 font-mono text-sm overflow-hidden">
-            <div class="flex space-x-2 mb-4">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-            </div>
-            <pre class="whitespace-pre-wrap text-gray-300">
-<span class="text-cyan-400">$ agent.assign("BuildFlightTrackerApp", "React")</span>
-<span class="text-green-400">[AG-PLAN]:</span> Génération de la Task List (14 étapes)... OK.
-<span class="text-yellow-400">[AG-USER]:</span> Ajour d'un feedback: "Utiliser shadcn/ui pour les composants."
-<span class="text-green-400">[AG-EXEC]:</span> Agent a mis à jour le plan et exécute la phase de codage.
-<span class="text-fuchsia-400">[AG-VERIFY]:</span> Test unitaire réussi pour la connexion API. Artifact #4 généré.
-            </pre>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- 3. PROJETS (ARTEFACTS) -->
-<section id="projets" class="section-padding max-w-7xl mx-auto">
-    <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Preuves de Compétence</span>
-    <h2 class="text-5xl font-bold mt-2 mb-16">Artefacts Clés</h2>
-
-    <div class="space-y-16">
-        <!-- ARTEFACT 1 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
-            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">1. Architecture d'une Application SaaS Multi-Agent</h3>
-            <p class="text-gray-400 mb-6">
-                Orchestration de trois agents (Frontend, Backend, DevOps) travaillant en parallèle sur un même projet. J'ai géré les conflits de dépendances et validé les merges.
-            </p>
-            <div class="flex flex-wrap items-center gap-4">
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Manager View Screenshot</span>
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Modèle: Gemini 3 Pro</span>
-                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Détail du Workflow</a>
-            </div>
-        </div>
-
-        <!-- ARTEFACT 2 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
-            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">2. Débogage et Refactorisation via Browser-in-the-Loop</h3>
-            <p class="text-gray-400 mb-6">
-                Utilisation de la fonctionnalité de contrôle du navigateur d'Antigravity pour identifier un bug visuel. L'agent a généré un enregistrement vidéo (Artifact) du bug, puis a corrigé le code JS/CSS de manière autonome.
-            </p>
-            <div class="flex flex-wrap items-center gap-4">
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Browser Recording (MP4)</span>
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Compétence: Feedback Asynchrone</span>
-                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Analyse du Bug</a>
-            </div>
-        </div>
-
-        <!-- ARTEFACT 3 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700 hover:border-cyan-400 transition duration-500">
-            <h3 class="text-3xl font-semibold text-cyan-400 mb-3">3. Génération d'un Composant D3.js de Visualisation de Données</h3>
-            <p class="text-gray-400 mb-6">
-                Instruction donnée à l'agent pour créer un graphique de données complexe (arborescence) à partir d'un ensemble de données JSON, sans intervention manuelle sur la librairie D3.js.
-            </p>
-            <div class="flex flex-wrap items-center gap-4">
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Artefact: Live Demo/Screenshot</span>
-                <span class="px-3 py-1 bg-blue-800/50 text-blue-300 rounded-full text-sm">Outil: JavaScript/D3.js</span>
-                <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Voir la Visualisation</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 4. CONTACT -->
-<section id="contact" class="section-padding text-center max-w-7xl mx-auto">
-    <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Lancement de Mission</span>
-    <h2 class="text-5xl font-bold mt-2 mb-8">Discutons de l'Ère des Agents.</h2>
-    <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">
-        Vous cherchez à transformer votre workflow de développement ? Contactez l'architecte qui maîtrise l'orchestration de l'IA.
-    </p>
+    <!-- 3. STAGES -->
     
-    <div class="flex justify-center space-x-6">
-        <a href="mailto:votre.email@example.com" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full">Email Direct</a>
-        <a href="#" target="_blank" class="tech-button bg-gray-700 text-white font-semibold py-3 px-8 rounded-full">LinkedIn</a>
-    </div>
-</section>
+    <!-- Stage 1 -->
+    <section id="stage1" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Expérience Professionnelle</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Stage 1 : [Nom de l'Entreprise]</h2>
+
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-4">Mise en place d'une infrastructure de déploiement centralisée</h3>
+            <p class="text-gray-400 mb-6">
+                **Durée :** 10 Semaines. **Rôle :** Assistant Administrateur Réseau.
+            </p>
+            
+            <h4 class="text-xl font-semibold text-white mt-4 mb-2">Réalisations Clés :</h4>
+            <ul class="list-disc list-outside ml-6 text-gray-400 space-y-2">
+                <li>Déploiement et configuration d'un serveur WDS pour l'installation automatisée de postes clients.</li>
+                <li>Création de scripts PowerShell pour la gestion des utilisateurs via Active Directory.</li>
+                <li>Documentation complète de la nouvelle architecture réseau pour l'équipe de support.</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Stage 2 -->
+    <section id="stage2" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Expérience Professionnelle</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Stage 2 : [Nom de l'Entreprise]</h2>
+
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-4">Implémentation d'une solution de supervision et d'alerting (Nagios/Zabbix)</h3>
+            <p class="text-gray-400 mb-6">
+                **Durée :** 14 Semaines. **Rôle :** Technicien Réseau Junior.
+            </p>
+            
+            <h4 class="text-xl font-semibold text-white mt-4 mb-2">Réalisations Clés :</h4>
+            <ul class="list-disc list-outside ml-6 text-gray-400 space-y-2">
+                <li>Configuration des sondes SNMP et des agents sur les serveurs critiques de l'entreprise.</li>
+                <li>Définition des seuils d'alerte et mise en place des notifications par mail/SMS.</li>
+                <li>Optimisation de la performance réseau grâce à l'analyse des logs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Stage 3 -->
+    <section id="stage3" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Expérience Professionnelle</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Stage 3 : [Nom de l'Entreprise]</h2>
+
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-4">Projet de migration vers le Cloud (Hybrid Cloud)</h3>
+            <p class="text-gray-400 mb-6">
+                **Durée :** 18 Semaines. **Rôle :** Assistant Ingénieur Systèmes.
+            </p>
+            
+            <h4 class="text-xl font-semibold text-white mt-4 mb-2">Réalisations Clés :</h4>
+            <ul class="list-disc list-outside ml-6 text-gray-400 space-y-2">
+                <li>Participation à la planification de la migration de VM on-premise vers Azure/AWS.</li>
+                <li>Configuration des VPN site-à-site pour assurer la connectivité hybride.</li>
+                <li>Mise en œuvre des politiques de sécurité et des contrôles d'accès dans l'environnement Cloud.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. VEILLE TECHNOLOGIQUE -->
+    <section id="veille" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ L'Avenir du Réseau</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Veille Technologique</h2>
+        
+        <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border border-gray-700">
+            <h3 class="text-3xl font-semibold text-cyan-400 mb-4">Sujet Actuel : Zero Trust Architecture (ZTA)</h3>
+            <p class="text-gray-400 mb-6">
+                Analyse des principes de la sécurité "Zero Trust" (ne jamais faire confiance, toujours vérifier). Mon objectif est de comprendre l'impact de la segmentation et de l'authentification adaptative sur les infrastructures modernes.
+            </p>
+            <a href="#" class="tech-button bg-gray-700 text-white py-2 px-6 rounded-full">Consulter l'Article de Veille</a>
+        </div>
+    </section>
+
+    <!-- 5. CERTIFICATIONS -->
+    <section id="certifications" class="section-padding max-w-7xl mx-auto">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Validations Officielles</span>
+        <h2 class="text-5xl font-bold mt-2 mb-6">Certifications</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                <h4 class="text-2xl text-white mb-2">Cisco CCNA (Simulation)</h4>
+                <p class="text-gray-400">Compétences de base en routage et switching.</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                <h4 class="text-2xl text-white mb-2">Microsoft 365 Certified: [Nom Spécifique]</h4>
+                <p class="text-gray-400">Gestion des environnements cloud Microsoft.</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                <h4 class="text-2xl text-white mb-2">Linux LPI [Niveau]</h4>
+                <p class="text-gray-400">Administration avancée des systèmes Linux.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACTS -->
+    <footer id="contact" class="section-padding text-center max-w-7xl mx-auto !min-h-0">
+        <span class="text-cyan-400 text-sm tracking-widest uppercase">/ Contact</span>
+        <h2 class="text-5xl font-bold mt-2 mb-8">Discutons de vos Projets Réseau.</h2>
+        
+        <div class="flex justify-center space-x-6">
+            <a href="mailto:votre.email@example.com" class="tech-button bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full">Email Direct</a>
+            <a href="#" target="_blank" class="tech-button bg-gray-700 text-white font-semibold py-3 px-8 rounded-full">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT POUR LES ANIMATIONS ET LES DROP DOWNS -->
+    <script>
+        // Fonction pour l'effet de parallaxe subtil sur le texte du HERO
+        function handleParallax() {
+            const heroText = document.querySelector('#accueil > div');
+            if (heroText) {
+                const scrollPosition = window.scrollY;
+                heroText.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+            }
+        }
+        window.addEventListener('scroll', handleParallax);
+
+        // LOGIQUE POUR LES MENUS DÉROULANTS (DROPDOWNS)
+        document.querySelectorAll('.group').forEach(group => {
+            const button = group.querySelector('button');
+            const menu = group.querySelector('.dropdown-menu');
+
+            if (button && menu) {
+                // Fonction pour basculer le menu
+                button.addEventListener('click', (event) => {
+                    // Fermer tous les autres menus
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) {
+                            m.classList.remove('open');
+                        }
+                    });
+                    // Ouvrir/Fermer le menu actuel
+                    menu.classList.toggle('open');
+                    event.stopPropagation(); // Empêche l'événement de se propager au document
+                });
+
+                // Fermer le menu si l'utilisateur clique à l'extérieur
+                document.addEventListener('click', (event) => {
+                    if (!group.contains(event.target)) {
+                        menu.classList.remove('open');
+                    }
+                });
+            }
+        });
+
+
+        // LOGIQUE D'ANIMATION AU SCROLL (APPARITION DES SECTIONS)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+            observer.observe(section);
+        });
+        
+        handleParallax();
+    </script>
+
+</body>
+</html>
